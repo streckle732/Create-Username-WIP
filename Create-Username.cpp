@@ -4,14 +4,14 @@
 
 int main()
 {
-    for (;;) 
+    for (;;)
     {
         std::cout << "Enter a Username to create an account.\n" ;
         std::string Username;
         std::cin >> Username;
-        const std::regex pattern("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[-+_!@#$%^&*.,?]).+$");
+        const std::regex Pattern("(?=.*[-+_!@#$%^&*.,?]).+$");
 
-        if (std::regex_match(Username, pattern))
+        if (std::regex_match(Username, Pattern))
         {
             std::cout << "Your username contains one or more special characters\n";
         }
@@ -24,8 +24,8 @@ int main()
             else
             {
                 std::cout << "Username " + Username + " Accepted.\n";
+                break;
             }
-            break;
         }
     }
 }
